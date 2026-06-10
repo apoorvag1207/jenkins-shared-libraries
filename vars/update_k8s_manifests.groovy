@@ -38,8 +38,8 @@ def call(Map config = [:]) {
             fi
         """
         
-        // 
-        sh "git remote set-url origin https://\${GIT_USERNAME}:\${GIT_PASSWORD}@github.com/apoorvag1207/tws-e-commerce-app_hackathon.git"
+        // ✅ No backslashes - Groovy injects values directly
+        sh "git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/apoorvag1207/tws-e-commerce-app_hackathon.git"
         sh "git push origin HEAD:${gitBranch}"
     }
 }
